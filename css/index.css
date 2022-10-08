@@ -1,0 +1,159 @@
+
+* {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+
+    background-color: #65737e;
+    /*color: #343d46;*/
+    color: #000;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.main {
+    width: 50%;
+    height: max-content;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    padding: 15px 0;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    position: relative;
+}
+
+
+.fullstack {
+    display: block;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+}
+
+.front {
+    text-decoration: underline 1px double #000;
+    z-index: 10000;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .show {
+        /*display: ;*/
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        transition-delay: .3s;
+    }
+
+    .developer {
+        transition: padding-top 1s ease-in-out;
+    }
+
+
+    .fullstack.show ~ .developer {
+        display: inline-block;
+        padding-top: 50px;
+        /*transition-delay: 1s;*/
+    }
+
+    .fullstack ~ .developer {
+        display: inline-block;
+        padding-top: 0;
+        transition: padding-top 1s ease-in-out;
+    }
+
+}
+
+.skills {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skills img {
+    margin-top: 10px;
+}
+
+
+.links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.links a {
+    display: inline-block;
+    height: 36px;
+    margin: 40px auto;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .title {
+        font-size: 60px;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    a:link, a:visited, a:focus {
+        color: #eeeeee;
+    }
+
+    .fullstack {
+        display: block;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .front {
+        cursor: pointer;
+        z-index: 100000;
+    }
+
+    .front:hover ~ .fullstack {
+        opacity: 1;
+    }
+}
+
+
+/*
+#7b96d0	(123,150,208)
+#82d0af	(130,208,175)
+#bceead	(188,238,173)
+#87bfc7	(135,191,199)
+#d87d7d	(216,125,125)
+*/
+/*
+#343d46	(52,61,70)
+#4f5b66	(79,91,102)
+#65737e	(101,115,126)
+#a7adba	(167,173,186)
+#c0c5ce	(192,197,206)
+*/
