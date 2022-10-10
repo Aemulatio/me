@@ -88,6 +88,10 @@ html {
         transition: padding-top 1s ease-in-out;
     }
 
+    .skills img {
+        flex-basis: 30%;
+    }
+
 }
 
 .skills {
