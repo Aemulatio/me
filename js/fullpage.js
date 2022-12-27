@@ -34,6 +34,8 @@
     if (hold === false) {
       hold = true;
       pan.style.transform = "translateY(" + slength + "vh)";
+      points.forEach((point) => point.classList.remove("active"));
+      points[slength / -100].classList.add("active");
       setTimeout(function () {
         hold = false;
       }, 1000);
@@ -126,17 +128,26 @@
   fullPage_container.addEventListener("wheel", _scrollY);
   _swipe(fullPage_container);
 
-  const tops = document.querySelectorAll(".point");
-  for (let i = 0; i < tops.length; i++) {
-    if (i === 0) {
-      tops[i].addEventListener("click", function () {
+  const points = document.querySelectorAll(".point");
+
+  points[0].classList.add("active");
+
+  points.forEach((point, index, list) => {
+    point.classList.remove("active");
+    if (index === 0) {
+      point.addEventListener("click", function () {
         scdir = "top";
         _scrollY(fullPage_container);
+        list.forEach((point) => point.classList.remove("active"));
+        point.classList.add("active");
       });
     } else {
-      tops[i].addEventListener("click", function () {
-        fullPage_container.style.transform = "translateY(" + -i * 100 + "vh)";
+      point.addEventListener("click", function () {
+        fullPage_container.style.transform =
+          "translateY(" + -index * 100 + "vh)";
+        list.forEach((point) => point.classList.remove("active"));
+        point.classList.add("active");
       });
     }
-  }
+  });
 })();
