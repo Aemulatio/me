@@ -23,16 +23,16 @@ html {
     user-select: none;
 }
 
-.main {
-    width: 50%;
-    height: max-content;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-}
+/*.main {*/
+/*    width: 50%;*/
+/*    height: max-content;*/
+/*    margin: auto;*/
+/*    top: 0;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    position: absolute;*/
+/*}*/
 
 .title {
     font-size: 40px;

@@ -1,0 +1,27 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+.fullPage_container {
+  position: relative;
+  overflow: hidden;
+  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.panel {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 10vmin;
+  padding: 1em;
+  box-sizing: border-box;
+  color: hsla(0deg, 0%, 100%, 0.1);
+  cursor: default;
+}
+
+/*# sourceMappingURL=fullpage.scss.map */
+/*# sourceMappingURL=fullpage.scss.map */
+
+/*# sourceMappingURL=fullpage.css.map */
