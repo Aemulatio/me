@@ -1,14 +1,14 @@
 (function () {
   "use strict";
-  /*[pan and well CSS scrolls]*/
-  let pnls = document.querySelectorAll(".panel").length,
-    scdir,
+  /*[panel and well CSS scrolls]*/
+  let panels = document.querySelectorAll(".panel").length,
+    scrollDirection,
     hold = false;
 
   function _scrollY(obj) {
-    let slength,
-      plength,
-      pan,
+    let scrollLength,
+      panelLength,
+      panel,
       step = 100,
       vh = window.innerHeight / 100,
       vmin = Math.min(window.innerHeight, window.innerWidth) / 100;
@@ -16,38 +16,47 @@
       (this !== undefined && this.id === "fullPage_container") ||
       (obj !== undefined && obj.id === "fullPage_container")
     ) {
-      pan = this || obj;
-      plength = parseInt(pan.offsetHeight / vh);
+      panel = this || obj;
+      panelLength = parseInt(panel.offsetHeight / vh);
     }
-    if (pan === undefined) {
+    if (panel === undefined) {
       return;
     }
-    plength = plength || parseInt(pan.offsetHeight / vmin);
-    slength = parseInt(pan.style.transform.replace("translateY(", ""));
-    if (scdir === "up" && Math.abs(slength) < plength - plength / pnls) {
-      slength = slength - step;
-    } else if (scdir === "down" && slength < 0) {
-      slength = slength + step;
-    } else if (scdir === "top") {
-      slength = 0;
+    panelLength = panelLength || parseInt(panel.offsetHeight / vmin);
+    scrollLength = parseInt(panel.style.transform.replace("translateY(", ""));
+    if (
+      scrollDirection === "up" &&
+      Math.abs(scrollLength) < panelLength - panelLength / panels
+    ) {
+      scrollLength = scrollLength - step;
+    } else if (scrollDirection === "down" && scrollLength < 0) {
+      scrollLength = scrollLength + step;
+    } else if (scrollDirection === "top") {
+      scrollLength = 0;
     }
     if (hold === false) {
       hold = true;
-      pan.style.transform = "translateY(" + slength + "vh)";
+      panel.style.transform = "translateY(" + scrollLength + "vh)";
       points.forEach((point) => point.classList.remove("active"));
-      points[slength / -100].classList.add("active");
+      points[scrollLength / -100].classList.add("active");
       setTimeout(function () {
         hold = false;
       }, 1000);
     }
     console.log(
-      scdir + ":" + slength + ":" + plength + ":" + (plength - plength / pnls)
+      scrollDirection +
+        ":" +
+        scrollLength +
+        ":" +
+        panelLength +
+        ":" +
+        (panelLength - panelLength / panels)
     );
   }
 
   /*[swipe detection on touchscreen devices]*/
   function _swipe(obj) {
-    let swdir,
+    let swipeDirection,
       sX,
       sY,
       dX,
@@ -64,7 +73,7 @@
       "touchstart",
       function (e) {
         const tchs = e.changedTouches[0];
-        swdir = "none";
+        swipeDirection = "none";
         sX = tchs.pageX;
         sY = tchs.pageY;
         stT = new Date().getTime();
@@ -90,19 +99,19 @@
         elT = new Date().getTime() - stT;
         if (elT <= alT) {
           if (Math.abs(dX) >= threshold && Math.abs(dY) <= slack) {
-            swdir = dX < 0 ? "left" : "right";
+            swipeDirection = dX < 0 ? "left" : "right";
           } else if (Math.abs(dY) >= threshold && Math.abs(dX) <= slack) {
-            swdir = dY < 0 ? "up" : "down";
+            swipeDirection = dY < 0 ? "up" : "down";
           }
           if (obj.id === "fullPage_container") {
-            if (swdir === "up") {
-              scdir = swdir;
+            if (swipeDirection === "up") {
+              scrollDirection = swipeDirection;
               _scrollY(obj);
             } else if (
-              swdir === "down" &&
+              swipeDirection === "down" &&
               obj.style.transform !== "translateY(0)"
             ) {
-              scdir = swdir;
+              scrollDirection = swipeDirection;
               _scrollY(obj);
             }
             e.stopPropagation();
@@ -118,10 +127,10 @@
   fullPage_container.style.transform = "translateY(0vh)";
   fullPage_container.addEventListener("wheel", function (e) {
     if (e.deltaY < 0) {
-      scdir = "down";
+      scrollDirection = "down";
     }
     if (e.deltaY > 0) {
-      scdir = "up";
+      scrollDirection = "up";
     }
     e.stopPropagation();
   });
@@ -130,13 +139,11 @@
 
   const points = document.querySelectorAll(".point");
 
-  points[0].classList.add("active");
-
   points.forEach((point, index, list) => {
     point.classList.remove("active");
     if (index === 0) {
       point.addEventListener("click", function () {
-        scdir = "top";
+        scrollDirection = "top";
         _scrollY(fullPage_container);
         list.forEach((point) => point.classList.remove("active"));
         point.classList.add("active");
@@ -150,4 +157,6 @@
       });
     }
   });
+
+  points[0].classList.add("active");
 })();
