@@ -29,7 +29,7 @@ body {
   flex-direction: column;
   align-items: end;
   justify-content: space-between;
-  width: 10%;
+  width: 5%;
   height: 10%;
 
   position: fixed;
@@ -46,7 +46,7 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    &:after {
+    & .icon {
       content: "";
       display: block;
       width: 10px;
@@ -55,7 +55,7 @@ body {
       background-color: wheat;
     }
 
-    &.active {
+    &.active .text {
       transform: scale(1.1);
     }
   }
