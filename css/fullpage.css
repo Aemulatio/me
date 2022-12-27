@@ -9,8 +9,7 @@ body {
   overflow: hidden;
   transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
 }
-
-.panel {
+.fullPage_container .panel {
   position: relative;
   height: 100vh;
   overflow: hidden;
@@ -21,7 +20,36 @@ body {
   cursor: default;
 }
 
-/*# sourceMappingURL=fullpage.scss.map */
-/*# sourceMappingURL=fullpage.scss.map */
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  width: 10%;
+  height: 10%;
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  right: 1vw;
+  transform: translateY(-50%);
+  border: 1px solid white;
+}
+.nav .point {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .point:after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: wheat;
+}
+.nav .point.active {
+  transform: scale(1.1);
+}
 
 /*# sourceMappingURL=fullpage.css.map */
