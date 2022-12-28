@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Code+Pro:wght@300;400&display=swap');
 
 
-$main-color: #000000;
-$header: #1b1b1b;
+$bcMain: #000000;
+$bcHeader: #1b1b1b;
 
 $orange: #ff9000;
 $orange2: #f90;
@@ -19,14 +19,35 @@ $gray4gray: #151515;
   font-weight: 500;
 }
 
-html {
-  padding: 0;
+body {
+  background-color: $bcHeader;
+  color: #c6c6c6;
   margin: 0;
 }
 
-body {
-  background-color: $header;
-  color: #c6c6c6;
+
+header.header {
+  background-color: $bcHeader;
+
+  .title {
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  &.scrolled {
+    position: sticky;
+    top: 0;
+
+    .title {
+      font-size: 30px;
+      text-align: left;
+    }
+  }
+}
+
+.main + div {
+  height: 100vh;
+  background-color: $bcMain;
 }
 
 
@@ -55,12 +76,16 @@ body {
   text-align: center;
   margin-bottom: 0;
 
-  .first {
+  .lastName {
     color: $white
   }
 
-  .second {
-    color: $orange;
+  .firstName {
+    background-color: $orange;
+    color: $bcMain;
+    padding: 0 3px;
+    border-radius: 5px;
+    font-weight: bold;
   }
 }
 

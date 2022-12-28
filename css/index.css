@@ -4,14 +4,31 @@
   font-weight: 500;
 }
 
-html {
-  padding: 0;
-  margin: 0;
-}
-
 body {
   background-color: #1b1b1b;
   color: #c6c6c6;
+  margin: 0;
+}
+
+header.header {
+  background-color: #1b1b1b;
+}
+header.header .title {
+  margin-top: 0;
+  padding: 10px;
+}
+header.header.scrolled {
+  position: sticky;
+  top: 0;
+}
+header.header.scrolled .title {
+  font-size: 30px;
+  text-align: left;
+}
+
+.main + div {
+  height: 100vh;
+  background-color: #000000;
 }
 
 .noselect {
@@ -38,11 +55,15 @@ body {
   text-align: center;
   margin-bottom: 0;
 }
-.title .first {
+.title .lastName {
   color: #ffffff;
 }
-.title .second {
-  color: #ff9000;
+.title .firstName {
+  background-color: #ff9000;
+  color: #000000;
+  padding: 0 3px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .subtitle {
