@@ -1,4 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Code+Pro:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Code+Pro:wght@300;400&display=swap');
+
+
+$main-color: #000000;
+$header: #1b1b1b;
+
+$orange: #ff9000;
+$orange2: #f90;
+
+$white: #ffffff;
+$gray4white: #1b1b1b;
+
+$grayColor: #c6c6c6;
+$gray4gray: #151515;
+
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -10,9 +25,10 @@ html {
 }
 
 body {
-  background-color: #1b1b1b;
+  background-color: $header;
   color: #c6c6c6;
 }
+
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -33,16 +49,19 @@ body {
 /*    right: 0;*/
 /*    position: absolute;*/
 /*}*/
+
 .title {
   font-size: 40px;
   text-align: center;
   margin-bottom: 0;
-}
-.title .first {
-  color: #ffffff;
-}
-.title .second {
-  color: #ff9000;
+
+  .first {
+    color: $white
+  }
+
+  .second {
+    color: $orange;
+  }
 }
 
 .subtitle {
@@ -53,12 +72,14 @@ body {
   position: relative;
 }
 
+
 .fullstack {
   display: none;
   opacity: 0;
   /*position: absolute;*/
   left: 0;
   right: 0;
+
 }
 
 .front {
@@ -67,32 +88,42 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+
   .show {
     display: block;
     opacity: 1;
     transition: opacity 1s ease-in-out;
-    transition-delay: 0.3s;
+    transition-delay: .3s;
   }
+
   .developer {
     transition: padding-top 1s ease-in-out;
   }
+
+
   .fullstack.show ~ .front {
     text-decoration: line-through underline 1px double #000;
+
   }
+
   .fullstack.show ~ .developer {
     display: inline-block;
     /*padding-top: 50px;*/
     /*transition-delay: 1s;*/
   }
+
   .fullstack ~ .developer {
     display: inline-block;
     padding-top: 0;
     transition: padding-top 1s ease-in-out;
   }
+
   .skills img {
     flex-basis: 30%;
   }
+
 }
+
 .skills {
   padding: 20px 0;
   display: flex;
@@ -103,6 +134,7 @@ body {
 .skills img {
   margin-top: 10px;
 }
+
 
 .links {
   margin-top: 40px;
@@ -117,30 +149,39 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+
   .title {
     font-size: 60px;
     text-align: center;
     margin-bottom: 0;
   }
+
   a:link, a:visited, a:focus {
     color: #eeeeee;
   }
+
   .fullstack {
     display: block;
     opacity: 0;
     transition: opacity 1s ease;
   }
+
   .front {
     cursor: pointer;
     z-index: 100000;
   }
+
   .front:hover {
     text-decoration: line-through underline 1px double #000;
+
   }
+
   .front:hover ~ .fullstack {
     opacity: 1;
   }
 }
+
+
 /*
 #7b96d0	(123,150,208)
 #82d0af	(130,208,175)
@@ -155,5 +196,3 @@ body {
 #a7adba	(167,173,186)
 #c0c5ce	(192,197,206)
 */
-
-/*# sourceMappingURL=index.css.map */
