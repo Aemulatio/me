@@ -175,13 +175,15 @@ header.header {
     align-content: space-between;
 
     .commercial__title {
-
+      flex-basis: 100%;
+      text-align: center;
       h3 {
         font-size: 35px;
       }
     }
 
     .commercial__body {
+      flex-basis: 100%;
 
       ul {
         list-style: none;
@@ -196,7 +198,7 @@ header.header {
             content: ">>";
           }
 
-          &.active::before{
+          &.active::before {
             content: "<<";
           }
 

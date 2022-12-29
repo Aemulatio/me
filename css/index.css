@@ -134,8 +134,15 @@ header.header.scrolled .header__title {
   flex-wrap: wrap;
   align-content: space-between;
 }
+.commercial .commercial__container .commercial__title {
+  flex-basis: 100%;
+  text-align: center;
+}
 .commercial .commercial__container .commercial__title h3 {
   font-size: 35px;
+}
+.commercial .commercial__container .commercial__body {
+  flex-basis: 100%;
 }
 .commercial .commercial__container .commercial__body ul {
   list-style: none;
