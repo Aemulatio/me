@@ -25,31 +25,18 @@ body {
   margin: 0;
 }
 
+a {
+  color: $orange;
+  text-decoration: none;
 
-header.header {
-  background-color: $bcHeader;
-
-  .title {
-    margin-top: 0;
-    padding: 10px;
-  }
-
-  &.scrolled {
-    position: sticky;
-    top: 0;
-
-    .title {
-      font-size: 30px;
-      text-align: left;
-    }
+  &:visited, &:active, &:link, &:focus {
+    text-decoration: none;
   }
 }
 
-.main + div {
-  height: 100vh;
-  background-color: $bcMain;
+.icon {
+  color: $orange;
 }
-
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -60,164 +47,114 @@ header.header {
   user-select: none;
 }
 
-/*.main {*/
-/*    width: 50%;*/
-/*    height: max-content;*/
-/*    margin: auto;*/
-/*    top: 0;*/
-/*    bottom: 0;*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    position: absolute;*/
-/*}*/
+header.header {
+  background-color: $bcHeader;
 
-.title {
-  font-size: 40px;
-  text-align: center;
-  margin-bottom: 0;
+  padding-top: 30px;
 
-  .lastName {
-    color: $white
-  }
+  .header__title {
+    margin-top: 0;
+    padding: 10px;
 
-  .firstName {
-    background-color: $orange;
-    color: $bcMain;
-    padding: 0 3px;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-}
-
-.subtitle {
-  padding: 15px 0;
-  font-size: 20px;
-  line-height: 26px;
-  text-align: center;
-  position: relative;
-}
-
-
-.fullstack {
-  display: none;
-  opacity: 0;
-  /*position: absolute;*/
-  left: 0;
-  right: 0;
-
-}
-
-.front {
-  text-decoration: underline 1px double #000;
-  z-index: 10000;
-}
-
-@media only screen and (max-width: 768px) {
-
-  .show {
-    display: block;
-    opacity: 1;
-    transition: opacity 1s ease-in-out;
-    transition-delay: .3s;
-  }
-
-  .developer {
-    transition: padding-top 1s ease-in-out;
-  }
-
-
-  .fullstack.show ~ .front {
-    text-decoration: line-through underline 1px double #000;
-
-  }
-
-  .fullstack.show ~ .developer {
-    display: inline-block;
-    /*padding-top: 50px;*/
-    /*transition-delay: 1s;*/
-  }
-
-  .fullstack ~ .developer {
-    display: inline-block;
-    padding-top: 0;
-    transition: padding-top 1s ease-in-out;
-  }
-
-  .skills img {
-    flex-basis: 30%;
-  }
-
-}
-
-.skills {
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.skills img {
-  margin-top: 10px;
-}
-
-
-.links {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-}
-
-.links a {
-  display: inline-block;
-  height: 36px;
-  margin: 40px auto;
-}
-
-@media only screen and (min-width: 768px) {
-
-  .title {
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
     margin-bottom: 0;
+
+    .header__lastName {
+      color: $white
+    }
+
+    .header__firstName {
+      background-color: $orange;
+      color: $bcMain;
+      padding: 0 3px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
   }
 
-  a:link, a:visited, a:focus {
-    color: #eeeeee;
-  }
 
-  .fullstack {
-    display: block;
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
+  &.scrolled {
+    position: sticky;
+    top: 0;
 
-  .front {
-    cursor: pointer;
-    z-index: 100000;
-  }
-
-  .front:hover {
-    text-decoration: line-through underline 1px double #000;
-
-  }
-
-  .front:hover ~ .fullstack {
-    opacity: 1;
+    .header__title {
+      font-size: 30px;
+      text-align: left;
+    }
   }
 }
 
+.me + div {
+  height: 100vh;
+  background-color: $bcMain;
+}
 
-/*
-#7b96d0	(123,150,208)
-#82d0af	(130,208,175)
-#bceead	(188,238,173)
-#87bfc7	(135,191,199)
-#d87d7d	(216,125,125)
-*/
-/*
-#343d46	(52,61,70)
-#4f5b66	(79,91,102)
-#65737e	(101,115,126)
-#a7adba	(167,173,186)
-#c0c5ce	(192,197,206)
-*/
+.me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .me__container {
+    width: 90vw;
+    padding-top: 70px;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+
+    .me__photo {
+      flex-basis: 19%;
+
+      img {
+        width: 100%;
+        border-radius: 40% 30%;
+      }
+    }
+
+    .me__about {
+      flex-basis: 50%;
+
+      padding: 15px 0;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: center;
+      position: relative;
+    }
+
+
+    .me__skills {
+      flex-basis: 100%;
+
+      padding: 70px 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      span{
+        flex-basis: 30%;
+        text-align: center;
+      }
+
+      .icon {
+        font-size: 60px;
+      }
+
+    }
+
+    .me__links {
+      flex-basis: 100%;
+
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+
+      a {
+        display: inline-block;
+        margin: 40px auto;
+        font-size: 50px;
+      }
+    }
+  }
+}
