@@ -1,23 +1,59 @@
 document.addEventListener("DOMContentLoaded", (e) => {
-  const { y, height } = document
-    .querySelector("div.me")
-    .getBoundingClientRect();
-  const header = document.querySelector("header.header");
-  document.addEventListener("wheel", (e) => {
-    const scrollY = window.scrollY;
+  // const { y, height } = document
+  //   .querySelector("div.me")
+  //   .getBoundingClientRect();
+  // const header = document.querySelector("header.header");
+  // document.addEventListener("wheel", (e) => {
+  //   const scrollY = window.scrollY;
+  //
+  //   if (scrollY >= y + height) {
+  //     header.classList.add("scrolled");
+  //   } else {
+  //     header.classList.remove("scrolled");
+  //   }
+  // });
+  //
+  // const notFirst = document.querySelectorAll(".notFirst");
+  // notFirst?.forEach((element, index) => {
+  //   element.style.paddingTop = `${
+  //     header.getBoundingClientRect().height * 1.5
+  //   }px`;
+  // });
+  // console.log(notFirst);
 
-    if (scrollY >= y + height) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
+  const getSiblings = function (e) {
+    let siblings = [];
+    if (!e.parentNode) {
+      return siblings;
     }
+    let sibling = e.parentNode.firstChild;
+    while (sibling) {
+      if (sibling.nodeType === 1 && sibling !== e) {
+        siblings.push(sibling);
+      }
+      sibling = sibling.nextSibling;
+    }
+    return siblings;
+  };
+
+  const commercials = document.querySelectorAll(".commercial__body li");
+  commercials.forEach((element, index, list) => {
+    element.addEventListener("click", function (e) {
+      getSiblings(this).map((sibling) => {
+        sibling.querySelector(".commercial__item-body").classList.add("hide");
+        sibling.classList.remove("active");
+      });
+      this.querySelector(".commercial__item-body").classList.toggle("hide");
+      this.classList.toggle("active");
+    });
   });
 
-  const notFirst = document.querySelectorAll(".notFirst");
-  notFirst?.forEach((element, index) => {
-    element.style.paddingTop = `${
-      header.getBoundingClientRect().height * 1.5
-    }px`;
+  const scrolls = document.querySelectorAll("div[class$='__next']");
+  scrolls.forEach((element, index, list) => {
+    element.addEventListener("click", function (e) {
+      document
+        .querySelector(`#${this.dataset.for}`)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   });
-  console.log(notFirst);
 });
