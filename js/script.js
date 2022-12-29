@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
       this.querySelector(".commercial__item-body").classList.toggle("hide");
       this.classList.toggle("active");
     });
+
+    element
+      .querySelector(".commercial__item-body")
+      .addEventListener("click", (e) => e.stopPropagation());
   });
 
   const scrolls = document.querySelectorAll("div[class$='__next']");
