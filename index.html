@@ -20,31 +20,83 @@
     <div class="me__container">
         <div class="me__photo">
             <img src="./imgs/me.png" alt="">
+            <div class="me__links">
+                <a href="https://t.me/Aemulatio" target="_blank" class="telegram">
+                    <span class="icon icon-telegram"></span>
+                </a>
+                <a href="https://github.com/Aemulatio" target="_blank" class="github">
+                    <span class="icon icon-gh"></span>
+                </a>
+            </div>
         </div>
         <div class="me__about">
             <p>
-                JS FullStack разработчик в теле FrontEnd'ера
+                Тут что-то надо написать хорошее
             </p>
         </div>
-        <div class="me__skills">
-            <span class="icon icon-html"></span>
-            <span class="icon icon-css"></span>
-            <span class="icon icon-js"></span>
-            <span class="icon icon-php"></span>
-            <span class="icon icon-react"></span>
+        <!--        <div class="me__skills">-->
+        <!--            <span class="icon icon-html"></span>-->
+        <!--            <span class="icon icon-css"></span>-->
+        <!--            <span class="icon icon-js"></span>-->
+        <!--            <span class="icon icon-php"></span>-->
+        <!--            <span class="icon icon-react"></span>-->
+        <!--        </div>-->
+
+        <div class="me__next" data-for="commercial">
+            <p>Комерческие проекты <span class="arrow">⬇</span></p>
         </div>
-        <div class="me__links">
-            <p>Связь со мной:</p>
-            <a href="https://t.me/Aemulatio" target="_blank" class="telegram">
-                <span class="icon icon-telegram"></span>
-            </a>
-            <a href="https://github.com/Aemulatio" target="_blank" class="github">
-                <span class="icon icon-gh"></span>
-            </a>
+    </div>
+</div>
+<div class="commercial" id="commercial">
+    <div class="commercial__container">
+        <div class="commercial__title">
+            <h3>Комерческие проекты</h3>
         </div>
-        <div class="me__next">
-            <p>Работы ⬇</p>
+        <div class="commercial__body">
+            <ul>
+                <li>
+                    <span data-for="aisrds">Автоматизированная информационная система разрешительной деятельности в строительстве</span>
+                    <div class="commercial__item-body hide" id="aisrds">
+                        <p><span>Стек</span>: PHP, 1C-Bitrix, JS, jQuery</p>
+                        <p><span>Команда</span>: 2 человека (я в роли fullstack + руководитель)</p>
+                        <p><span>Описание</span>: </p>
+                    </div>
+                </li>
+                <li>
+                    <span data-for="albazino">Интерактивный стенд для краеведческого музея Амурской области</span>
+                    <div class="commercial__item-body hide" id="albazino">
+                        <p><span>Стек</span>: JS, fancybox, jQuery, stPageFlip, plyr</p>
+                        <p><span>Команда</span>: 2 человека (я + руководитель) </p>
+                        <p><span>Описание</span>: Интерактивный стенд посвященный истории Албазинского острога. Было
+                            необходимо разработать эргономичный интерфейс, который был бы интерактивен и на запрос
+                            пользователя выдавал соответствующий ответ. С работой можно
+                            <a href="https://aemulatio.github.io/albazino/" target="_blank" rel="nofollow">
+                                ознакомиться по ссылке
+                            </a>.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <span data-for="copp">Личный кабинет Центра опережающей профессиональной подготовки</span>
+                    <div class="commercial__item-body hide" id="copp">
+                        <p><span>Стек</span>: PHP, 1C-Bitrix, JS, jQuery</p>
+                        <p><span>Команда</span>: 3 человека (я в роли fullstack; 1С разработчик; руководитель)</p>
+                        <p><span>Описание</span>: Необходимо было разработать функционал непрерывно связанный с системой
+                            1С личного кабинета для сайта, а также предусмотреть возможность записи на мероприятия и
+                            курсы проводимые <a href="https://copp28.ru/" target="_blank" rel="nofollow">центром</a>.
+                        </p>
+                    </div>
+                </li>
+            </ul>
         </div>
+        <div class="commercial__next" data-for="diy">
+            <p>Собственные наработки <span class="arrow">⬇</span></p>
+        </div>
+    </div>
+</div>
+<div class="diy" id="diy">
+    <div class="diy__container">
+
     </div>
 </div>
 </body>
