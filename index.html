@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Свечников Степан</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./fonts/skills/style.css">
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Свечников Степан Сайт-резюме Контактная информация">
     <meta name="keywords"
@@ -11,57 +12,41 @@
 </head>
 <body>
 <header class="header">
-    <h1 class="title">
-        <span class="lastName">Свечников</span> <span class="firstName">Степан</span>
+    <h1 class="header__title">
+        <span class="header__lastName">Свечников</span> <span class="header__firstName">Степан</span>
     </h1>
 </header>
-<div class="main">
-    <h3 class="subtitle ">
-        JS FullStack разработчик в теле FrontEnd'ера
-    </h3>
-    <div class="skills">
-        <img src="./imgs/html.svg" alt="HTML5">
-        <img src="./imgs/css.svg" alt="CSS3">
-        <img src="./imgs/js.svg" alt="JAVASCRIPT">
-        <img src="./imgs/php.svg" alt="PHP">
-        <img src="./imgs/react.svg" alt="REACT">
+<div class="me">
+    <div class="me__container">
+        <div class="me__photo">
+            <img src="./imgs/me.png" alt="">
+        </div>
+        <div class="me__about">
+            <p>
+                JS FullStack разработчик в теле FrontEnd'ера
+            </p>
+        </div>
+        <div class="me__skills">
+            <span class="icon icon-html"></span>
+            <span class="icon icon-css"></span>
+            <span class="icon icon-js"></span>
+            <span class="icon icon-php"></span>
+            <span class="icon icon-react"></span>
+        </div>
+        <div class="me__links">
+            <p>Связь со мной:</p>
+            <a href="https://t.me/Aemulatio" target="_blank" class="telegram">
+                <span class="icon icon-telegram"></span>
+            </a>
+            <a href="https://github.com/Aemulatio" target="_blank" class="github">
+                <span class="icon icon-gh"></span>
+            </a>
+        </div>
+        <div class="me__next">
+            <p>Работы ⬇</p>
+        </div>
     </div>
-    <div class="links">
-        <a href="https://t.me/Aemulatio" target="_blank" class=" telegram ">
-            <img src="./imgs/tg.svg" alt="telegram">
-        </a>
-        <a href="https://github.com/Aemulatio" target="_blank" class="github">
-            <img src="./imgs/gh.svg" alt="github">
-        </a>
-    </div>
-</div>
-<div class="notFirst">
-    askdh
 </div>
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', (e) => {
-        const {y, height} = document.querySelector("div.main").getBoundingClientRect();
-        const header = document.querySelector("header.header");
-        document.addEventListener('wheel', (e) => {
-            const scrollY = window.scrollY
-
-            if (scrollY >= (y + height)) {
-                header.classList.add('scrolled')
-            } else {
-                header.classList.remove('scrolled')
-            }
-
-            // console.log(e.pageY)
-        });
-
-        const notFirst = document.querySelectorAll(".notFirst")
-        notFirst.forEach((element, index) => {
-            element.style.paddingTop = `${header.getBoundingClientRect().height * 1.5}px`;
-        })
-        console.log(notFirst)
-
-
-    })
-</script>
+<script src="./js/script.js"></script>
 </html>
