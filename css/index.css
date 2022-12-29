@@ -61,11 +61,6 @@ header.header.scrolled .header__title {
   text-align: left;
 }
 
-.me + div {
-  height: 100vh;
-  background-color: #000000;
-}
-
 .me {
   display: flex;
   flex-direction: column;
@@ -73,13 +68,15 @@ header.header.scrolled .header__title {
 }
 .me .me__container {
   width: 90vw;
+  height: 83vh;
   padding-top: 70px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
 }
 .me .me__container .me__photo {
-  flex-basis: 19%;
+  flex-basis: 35%;
 }
 .me .me__container .me__photo img {
   width: 100%;
@@ -87,6 +84,7 @@ header.header.scrolled .header__title {
 }
 .me .me__container .me__about {
   flex-basis: 50%;
+  height: 50%;
   padding: 15px 0;
   font-size: 20px;
   line-height: 26px;
@@ -109,7 +107,6 @@ header.header.scrolled .header__title {
 }
 .me .me__container .me__links {
   flex-basis: 100%;
-  margin-top: 40px;
   display: flex;
   justify-content: center;
 }
@@ -117,6 +114,78 @@ header.header.scrolled .header__title {
   display: inline-block;
   margin: 40px auto;
   font-size: 50px;
+}
+
+.commercial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+}
+.commercial .commercial__container {
+  color: #c6c6c6;
+  width: 90vw;
+  height: 85vh;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.commercial .commercial__container .commercial__title h3 {
+  font-size: 35px;
+}
+.commercial .commercial__container .commercial__body ul {
+  list-style: none;
+}
+.commercial .commercial__container .commercial__body ul li {
+  font-size: 24px;
+  text-align: left;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.commercial .commercial__container .commercial__body ul li::before {
+  content: ">>";
+}
+.commercial .commercial__container .commercial__body ul li.active::before {
+  content: "<<";
+}
+.commercial .commercial__container .commercial__body ul li > span {
+  border-bottom: 1px solid #ffffff;
+}
+.commercial .commercial__container .commercial__body ul li:not(:first-child) {
+  margin-top: 20px;
+}
+.commercial .commercial__container .commercial__body ul li .commercial__item-body.hide {
+  display: none;
+}
+.commercial .commercial__container .commercial__body ul li .commercial__item-body p {
+  margin: 10px 0;
+}
+.commercial .commercial__container .commercial__body ul li .commercial__item-body p span {
+  border-bottom: 1px dashed #ffffff;
+}
+
+div[class$=__next] {
+  text-align: center;
+  font-size: 25px;
+}
+@keyframes arrow {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+div[class$=__next] span.arrow {
+  display: inline-block;
+  animation: arrow 1.5s ease-in-out infinite;
 }
 
 /*# sourceMappingURL=index.css.map */
