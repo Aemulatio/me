@@ -80,7 +80,7 @@ header.header.scrolled .header__title {
 }
 .me .me__container .me__photo img {
   width: 100%;
-  border-radius: 40% 30%;
+  border-radius: 45% 30%;
 }
 .me .me__container .me__about {
   flex-basis: 50%;
@@ -165,11 +165,19 @@ header.header.scrolled .header__title {
 .commercial .commercial__container .commercial__body ul li:not(:first-child) {
   margin-top: 20px;
 }
+.commercial .commercial__container .commercial__body ul li .commercial__item-body {
+  cursor: default;
+}
+.commercial .commercial__container .commercial__body ul li .commercial__item-body a {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ff9000;
+}
 .commercial .commercial__container .commercial__body ul li .commercial__item-body.hide {
   display: none;
 }
 .commercial .commercial__container .commercial__body ul li .commercial__item-body p {
   margin: 10px 0;
+  line-height: 32px;
 }
 .commercial .commercial__container .commercial__body ul li .commercial__item-body p span {
   border-bottom: 1px dashed #ffffff;
