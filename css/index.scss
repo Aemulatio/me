@@ -102,7 +102,7 @@ header.header {
     flex-wrap: wrap;
 
     .me__photo {
-      flex-basis: 35%;
+      flex-basis: 30%;
 
       img {
         width: 100%;
@@ -177,6 +177,7 @@ header.header {
     .commercial__title {
       flex-basis: 100%;
       text-align: center;
+
       h3 {
         font-size: 35px;
       }
@@ -213,7 +214,7 @@ header.header {
           .commercial__item-body {
             cursor: default;
 
-            a{
+            a {
               //text-decoration: underline  ;
               padding-bottom: 2px;
               border-bottom: 2px solid $orange;
@@ -242,7 +243,7 @@ header.header {
 
 
 div[class$='__next'] {
-  //flex-basis: 100%;
+  flex-basis: 100%;
   text-align: center;
   font-size: 25px;
 
