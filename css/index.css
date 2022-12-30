@@ -76,7 +76,7 @@ header.header.scrolled .header__title {
   flex-wrap: wrap;
 }
 .me .me__container .me__photo {
-  flex-basis: 35%;
+  flex-basis: 30%;
 }
 .me .me__container .me__photo img {
   width: 100%;
@@ -184,6 +184,7 @@ header.header.scrolled .header__title {
 }
 
 div[class$=__next] {
+  flex-basis: 100%;
   text-align: center;
   font-size: 25px;
 }
