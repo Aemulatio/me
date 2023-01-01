@@ -4,6 +4,19 @@
   font-weight: 500;
 }
 
+body::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c6c6c6; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
 body {
   background-color: #1b1b1b;
   color: #c6c6c6;
@@ -88,8 +101,9 @@ header.header.scrolled .header__title {
   padding: 15px 0;
   font-size: 20px;
   line-height: 26px;
-  text-align: center;
+  text-align: left;
   position: relative;
+  text-indent: 1em;
 }
 .me .me__container .me__skills {
   flex-basis: 100%;
@@ -125,7 +139,7 @@ header.header.scrolled .header__title {
 .commercial .commercial__container {
   color: #c6c6c6;
   width: 90vw;
-  height: 85vh;
+  min-height: 85vh;
   padding-top: 70px;
   padding-bottom: 70px;
   display: flex;
@@ -144,43 +158,34 @@ header.header.scrolled .header__title {
 .commercial .commercial__container .commercial__body {
   flex-basis: 100%;
 }
-.commercial .commercial__container .commercial__body ul {
-  list-style: none;
+
+.diy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.commercial .commercial__container .commercial__body ul li {
-  font-size: 24px;
-  text-align: left;
-  padding-left: 5px;
-  cursor: pointer;
+.diy .diy__container {
+  color: #c6c6c6;
+  width: 90vw;
+  min-height: 85vh;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
-.commercial .commercial__container .commercial__body ul li::before {
-  content: ">>";
+.diy .diy__container .diy__title {
+  flex-basis: 100%;
+  text-align: center;
 }
-.commercial .commercial__container .commercial__body ul li.active::before {
-  content: "<<";
+.diy .diy__container .diy__title h3 {
+  font-size: 35px;
 }
-.commercial .commercial__container .commercial__body ul li > span {
-  border-bottom: 1px solid #ffffff;
-}
-.commercial .commercial__container .commercial__body ul li:not(:first-child) {
-  margin-top: 20px;
-}
-.commercial .commercial__container .commercial__body ul li .commercial__item-body {
-  cursor: default;
-}
-.commercial .commercial__container .commercial__body ul li .commercial__item-body a {
-  padding-bottom: 2px;
-  border-bottom: 2px solid #ff9000;
-}
-.commercial .commercial__container .commercial__body ul li .commercial__item-body.hide {
-  display: none;
-}
-.commercial .commercial__container .commercial__body ul li .commercial__item-body p {
-  margin: 10px 0;
-  line-height: 32px;
-}
-.commercial .commercial__container .commercial__body ul li .commercial__item-body p span {
-  border-bottom: 1px dashed #ffffff;
+.diy .diy__container .diy__body {
+  flex-basis: 100%;
+  padding-top: 50px;
 }
 
 div[class$=__next] {
@@ -202,6 +207,50 @@ div[class$=__next] {
 div[class$=__next] span.arrow {
   display: inline-block;
   animation: arrow 1.5s ease-in-out infinite;
+}
+
+div[class$=__body] ul {
+  list-style: none;
+}
+div[class$=__body] ul li {
+  font-size: 24px;
+  text-align: left;
+  padding-left: 5px;
+  cursor: pointer;
+}
+div[class$=__body] ul li::before {
+  content: ">>";
+  display: inline-block;
+  transition: rotate 1s ease-in-out;
+}
+div[class$=__body] ul li.active::before {
+  display: inline-block;
+  content: ">>";
+  rotate: 90deg;
+  transition: rotate 1s ease-in-out;
+}
+div[class$=__body] ul li > span {
+  border-bottom: 1px solid #ffffff;
+}
+div[class$=__body] ul li:not(:first-child) {
+  margin-top: 20px;
+}
+div[class$=__body] ul li .diy__item-body, div[class$=__body] ul li .commercial__item-body {
+  cursor: default;
+}
+div[class$=__body] ul li .diy__item-body a, div[class$=__body] ul li .commercial__item-body a {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ff9000;
+}
+div[class$=__body] ul li .diy__item-body.hide, div[class$=__body] ul li .commercial__item-body.hide {
+  display: none;
+}
+div[class$=__body] ul li .diy__item-body p, div[class$=__body] ul li .commercial__item-body p {
+  margin: 10px 0;
+  line-height: 32px;
+}
+div[class$=__body] ul li .diy__item-body p span, div[class$=__body] ul li .commercial__item-body p span {
+  border-bottom: 1px dashed #ffffff;
 }
 
 /*# sourceMappingURL=index.css.map */

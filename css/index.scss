@@ -18,6 +18,23 @@ $gray4gray: #151515;
   font-weight: 500;
 }
 
+
+body::-webkit-scrollbar {
+  width: 10px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: $bcMain;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $grayColor;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+}
+
+
+
+
 body {
   background-color: $bcHeader;
   color: #c6c6c6;
@@ -115,8 +132,9 @@ header.header {
       padding: 15px 0;
       font-size: 20px;
       line-height: 26px;
-      text-align: center;
+      text-align: left;
       position: relative;
+      text-indent: 1em;
     }
 
 
