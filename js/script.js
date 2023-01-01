@@ -36,19 +36,21 @@ document.addEventListener("DOMContentLoaded", (e) => {
     return siblings;
   };
 
-  const commercials = document.querySelectorAll(".commercial__body li");
+  const commercials = document.querySelectorAll("div[class*='__body'] li");
   commercials.forEach((element, index, list) => {
     element.addEventListener("click", function (e) {
       getSiblings(this).map((sibling) => {
-        sibling.querySelector(".commercial__item-body").classList.add("hide");
+        sibling
+          .querySelector("div[class*='__item-body']")
+          .classList.add("hide");
         sibling.classList.remove("active");
       });
-      this.querySelector(".commercial__item-body").classList.toggle("hide");
+      this.querySelector("div[class*='__item-body']").classList.toggle("hide");
       this.classList.toggle("active");
     });
 
     element
-      .querySelector(".commercial__item-body")
+      .querySelector("div[class*='__item-body']")
       .addEventListener("click", (e) => e.stopPropagation());
   });
 
