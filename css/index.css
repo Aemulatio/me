@@ -256,6 +256,74 @@ div[class$=__body] ul li .diy__item-body p span, div[class$=__body] ul li .comme
     font-size: 18px;
     line-height: 24px;
   }
+  .commercial .commercial__container {
+    padding-bottom: 20px;
+  }
+  .commercial .commercial__container .commercial__title h3 {
+    font-size: 25px;
+  }
+  .commercial .commercial__container .commercial__body ul {
+    padding: 0;
+  }
+  .commercial .commercial__container .commercial__body ul li {
+    padding: 0;
+    font-size: 20px;
+  }
+  .commercial .commercial__container .commercial__body ul li::before {
+    display: none;
+  }
+  .commercial .commercial__container .commercial__body ul li:not(:first-child) {
+    margin-top: 30px;
+  }
+  .commercial .commercial__container .commercial__body ul li .commercial__item-body a {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ff9000;
+  }
+  .commercial .commercial__container .commercial__body ul li .commercial__item-body.hide {
+    display: block;
+  }
+  .commercial .commercial__container .commercial__body ul li .commercial__item-body p {
+    margin: 10px 0;
+    line-height: 26px;
+    font-size: 18px;
+  }
+  .commercial .commercial__container .commercial__body ul li .commercial__item-body p span {
+    border-bottom: 1px dashed #ffffff;
+  }
+  .diy .diy__container {
+    padding-bottom: 20px;
+  }
+  .diy .diy__container .diy__title h3 {
+    font-size: 25px;
+  }
+  .diy .diy__container .diy__body ul {
+    padding: 0;
+  }
+  .diy .diy__container .diy__body ul li {
+    padding: 0;
+    font-size: 20px;
+  }
+  .diy .diy__container .diy__body ul li::before {
+    display: none;
+  }
+  .diy .diy__container .diy__body ul li:not(:first-child) {
+    margin-top: 30px;
+  }
+  .diy .diy__container .diy__body ul li .diy__item-body a {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ff9000;
+  }
+  .diy .diy__container .diy__body ul li .diy__item-body.hide {
+    display: block;
+  }
+  .diy .diy__container .diy__body ul li .diy__item-body p {
+    margin: 10px 0;
+    line-height: 26px;
+    font-size: 18px;
+  }
+  .diy .diy__container .diy__body ul li .diy__item-body p span {
+    border-bottom: 1px dashed #ffffff;
+  }
 }
 @media only screen and (min-width: 600px) {
   .me .me__container {
