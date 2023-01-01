@@ -20,7 +20,7 @@ $gray4gray: #151515;
 
 
 body::-webkit-scrollbar {
-  width: 10px;               /* width of the entire scrollbar */
+  width: 10px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
@@ -28,11 +28,9 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: $grayColor;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
+  background-color: $grayColor; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
 }
-
-
 
 
 body {
@@ -89,14 +87,10 @@ header.header {
     }
   }
 
-
-  &.scrolled {
-    position: sticky;
-    top: 0;
-
+  @media only screen and (min-width: 1600px) {
+    padding-top: 40px;
     .header__title {
-      font-size: 30px;
-      text-align: left;
+      font-size: 60px;
     }
   }
 }
@@ -109,8 +103,6 @@ header.header {
 
   .me__container {
     width: 90vw;
-    height: 83vh;
-    padding-top: 70px;
 
     display: flex;
     justify-content: space-around;
@@ -118,7 +110,7 @@ header.header {
     flex-wrap: wrap;
 
     .me__photo {
-      flex-basis: 30%;
+      //flex-basis: 30%;
 
       img {
         width: 100%;
@@ -128,33 +120,13 @@ header.header {
 
     .me__about {
       flex-basis: 50%;
-      height: 50%;
+      height: auto;
       padding: 15px 0;
       font-size: 20px;
       line-height: 26px;
       text-align: left;
       position: relative;
       text-indent: 1em;
-    }
-
-
-    .me__skills {
-      flex-basis: 100%;
-
-      padding: 70px 0;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-
-      span {
-        flex-basis: 30%;
-        text-align: center;
-      }
-
-      .icon {
-        font-size: 60px;
-      }
-
     }
 
     .me__links {
@@ -169,6 +141,151 @@ header.header {
         font-size: 50px;
       }
     }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .me__container {
+      padding-top: 50px;
+
+      .me__photo {
+        flex-basis: 100%;
+
+        img {
+          width: 100%;
+          border-radius: 45% 30%;
+        }
+      }
+
+      .me__about {
+        flex-basis: 100%;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .me__container {
+      padding-top: 50px;
+
+      .me__photo {
+        flex-basis: 40%;
+
+        img {
+          width: 100%;
+          border-radius: 45% 30%;
+        }
+      }
+
+      .me__about {
+        align-self: flex-start;
+        flex-basis: 50%;
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .me__container {
+      padding-top: 50px;
+      min-height: 57vh;
+
+      .me__photo {
+        flex-basis: 50%;
+
+        img {
+          width: 100%;
+          border-radius: 45% 30%;
+        }
+      }
+
+      .me__about {
+        align-self: center;
+        flex-basis: 40%;
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    .me__container {
+      padding-top: 50px;
+
+      .me__photo {
+        flex-basis: 40%;
+
+        img {
+          width: 100%;
+          border-radius: 45% 30%;
+        }
+      }
+
+      .me__about {
+        flex-basis: 50%;
+        font-size: 20px;
+        line-height: 26px;
+      }
+
+      .me__links {
+        a {
+          margin: 30px auto;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .me__container {
+      min-height: 83vh;
+      padding-top: 70px;
+
+      .me__photo {
+        flex-basis: 30%;
+      }
+
+      .me__about {
+        flex-basis: 50%;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      .me__links {
+
+        a {
+          margin: 40px auto;
+        }
+      }
+
+    }
+  }
+
+  @media only screen and (min-width: 1600px) {
+
+    .me__container {
+      min-height: 88vh;
+      padding-top: 50px;
+
+      .me__photo {
+        flex-basis: 35%;
+      }
+
+      .me__about {
+        flex-basis: 45%;
+        font-size: 46px;
+        line-height: 58px;
+      }
+
+      .me__links {
+
+        a {
+          margin: 40px auto;
+        }
+      }
+
+    }
+
   }
 }
 
@@ -262,6 +379,10 @@ div[class$='__next'] {
   span.arrow {
     display: inline-block;
     animation: arrow 1.5s ease-in-out infinite;
+  }
+
+  @media only screen and (min-width: 1600px) {
+    font-size: 40px;
   }
 }
 
