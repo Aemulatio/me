@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'skills';
-  src:  url('fonts/skills.eot?9kprx7');
-  src:  url('fonts/skills.eot?9kprx7#iefix') format('embedded-opentype'),
-    url('fonts/skills.ttf?9kprx7') format('truetype'),
-    url('fonts/skills.woff?9kprx7') format('woff'),
-    url('fonts/skills.svg?9kprx7#skills') format('svg');
+  src:  url('fonts/skills.eot?s3f3kc');
+  src:  url('fonts/skills.eot?s3f3kc#iefix') format('embedded-opentype'),
+    url('fonts/skills.ttf?s3f3kc') format('truetype'),
+    url('fonts/skills.woff?s3f3kc') format('woff'),
+    url('fonts/skills.svg?s3f3kc#skills') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,21 +28,12 @@
 .icon-telegram:before {
   content: "\e906";
 }
-.icon-react:before {
-  content: "\e905";
-}
-.icon-php:before {
-  content: "\e904";
-}
-.icon-js:before {
-  content: "\e903";
-}
-.icon-css:before {
-  content: "\e900";
-}
 .icon-gh:before {
   content: "\e901";
 }
-.icon-html:before {
-  content: "\e902";
+.icon-thick-arrow-down:before {
+  content: "\ea36";
+}
+.icon-arrow-down:before {
+  content: "\ea3e";
 }

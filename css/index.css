@@ -177,17 +177,18 @@ div[class$=__next] {
 }
 @keyframes arrow {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(5px);
   }
   100% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
-div[class$=__next] span.arrow {
+div[class$=__next] span.icon-thick-arrow-down {
   display: inline-block;
+  color: inherit;
   animation: arrow 1.5s ease-in-out infinite;
 }
 @media only screen and (min-width: 2000px) {

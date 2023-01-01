@@ -222,18 +222,19 @@ div[class$='__next'] {
 
   @keyframes arrow {
     0% {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
     }
     50% {
-      transform: translateY(10px);
+      transform: translateY(5px);
     }
     100% {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
     }
   }
 
-  span.arrow {
+  span.icon-thick-arrow-down {
     display: inline-block;
+    color: inherit;
     animation: arrow 1.5s ease-in-out infinite;
   }
 
