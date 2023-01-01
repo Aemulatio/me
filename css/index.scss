@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Source+Code+Pro:wght@300;400&display=swap');
 
-
 $bcMain: #000000;
 $bcHeader: #1b1b1b;
 
@@ -164,7 +163,7 @@ header.header {
   .commercial__container {
     color: #c6c6c6;
     width: 90vw;
-    height: 85vh;
+    min-height: 85vh;
     padding-top: 70px;
     padding-bottom: 70px;
 
@@ -185,58 +184,41 @@ header.header {
 
     .commercial__body {
       flex-basis: 100%;
+    }
+  }
+}
 
-      ul {
-        list-style: none;
+.diy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-        li {
-          font-size: 24px;
-          text-align: left;
-          padding-left: 5px;
-          cursor: pointer;
+  .diy__container {
+    color: #c6c6c6;
+    width: 90vw;
+    min-height: 85vh;
+    padding-top: 70px;
+    padding-bottom: 70px;
 
-          &::before {
-            content: ">>";
-          }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
 
-          &.active::before {
-            content: "<<";
-          }
+    .diy__title {
+      flex-basis: 100%;
+      text-align: center;
 
-          & > span {
-            border-bottom: 1px solid $white;
-          }
-
-          &:not(:first-child) {
-            margin-top: 20px;
-          }
-
-          .commercial__item-body {
-            cursor: default;
-
-            a {
-              //text-decoration: underline  ;
-              padding-bottom: 2px;
-              border-bottom: 2px solid $orange;
-            }
-
-            &.hide {
-              display: none;
-            }
-
-            p {
-              margin: 10px 0;
-              line-height: 32px;
-
-              span {
-                border-bottom: 1px dashed $white;
-              }
-            }
-
-          }
-        }
-
+      h3 {
+        font-size: 35px;
       }
+    }
+
+    .diy__body {
+      flex-basis: 100%;
+      padding-top: 50px;
+
     }
   }
 }
@@ -262,5 +244,64 @@ div[class$='__next'] {
   span.arrow {
     display: inline-block;
     animation: arrow 1.5s ease-in-out infinite;
+  }
+}
+
+
+div[class$="__body"] {
+  ul {
+    list-style: none;
+
+    li {
+      font-size: 24px;
+      text-align: left;
+      padding-left: 5px;
+      cursor: pointer;
+
+      &::before {
+        content: ">>";
+        display: inline-block;
+        transition: rotate 1s ease-in-out;
+      }
+
+      &.active::before {
+        display: inline-block;
+        content: ">>";
+        rotate: 90deg;
+
+        transition: rotate 1s ease-in-out;
+      }
+
+      & > span {
+        border-bottom: 1px solid $white;
+      }
+
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+
+      .diy__item-body, .commercial__item-body {
+        cursor: default;
+
+        a {
+          padding-bottom: 2px;
+          border-bottom: 2px solid $orange;
+        }
+
+        &.hide {
+          display: none;
+        }
+
+        p {
+          margin: 10px 0;
+          line-height: 32px;
+
+          span {
+            border-bottom: 1px dashed $white;
+          }
+        }
+
+      }
+    }
   }
 }
