@@ -65,13 +65,13 @@ header.header .header__title .header__firstName {
   border-radius: 5px;
   font-weight: bold;
 }
-header.header.scrolled {
-  position: sticky;
-  top: 0;
-}
-header.header.scrolled .header__title {
-  font-size: 30px;
-  text-align: left;
+@media only screen and (min-width: 1600px) {
+  header.header {
+    padding-top: 40px;
+  }
+  header.header .header__title {
+    font-size: 60px;
+  }
 }
 
 .me {
@@ -81,15 +81,10 @@ header.header.scrolled .header__title {
 }
 .me .me__container {
   width: 90vw;
-  height: 83vh;
-  padding-top: 70px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-}
-.me .me__container .me__photo {
-  flex-basis: 30%;
 }
 .me .me__container .me__photo img {
   width: 100%;
@@ -97,27 +92,13 @@ header.header.scrolled .header__title {
 }
 .me .me__container .me__about {
   flex-basis: 50%;
-  height: 50%;
+  height: auto;
   padding: 15px 0;
   font-size: 20px;
   line-height: 26px;
   text-align: left;
   position: relative;
   text-indent: 1em;
-}
-.me .me__container .me__skills {
-  flex-basis: 100%;
-  padding: 70px 0;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.me .me__container .me__skills span {
-  flex-basis: 30%;
-  text-align: center;
-}
-.me .me__container .me__skills .icon {
-  font-size: 60px;
 }
 .me .me__container .me__links {
   flex-basis: 100%;
@@ -128,6 +109,114 @@ header.header.scrolled .header__title {
   display: inline-block;
   margin: 40px auto;
   font-size: 50px;
+}
+@media only screen and (max-width: 600px) {
+  .me .me__container {
+    padding-top: 50px;
+  }
+  .me .me__container .me__photo {
+    flex-basis: 100%;
+  }
+  .me .me__container .me__photo img {
+    width: 100%;
+    border-radius: 45% 30%;
+  }
+  .me .me__container .me__about {
+    flex-basis: 100%;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .me .me__container {
+    padding-top: 50px;
+  }
+  .me .me__container .me__photo {
+    flex-basis: 40%;
+  }
+  .me .me__container .me__photo img {
+    width: 100%;
+    border-radius: 45% 30%;
+  }
+  .me .me__container .me__about {
+    align-self: flex-start;
+    flex-basis: 50%;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .me .me__container {
+    padding-top: 50px;
+    min-height: 57vh;
+  }
+  .me .me__container .me__photo {
+    flex-basis: 50%;
+  }
+  .me .me__container .me__photo img {
+    width: 100%;
+    border-radius: 45% 30%;
+  }
+  .me .me__container .me__about {
+    align-self: center;
+    flex-basis: 40%;
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .me .me__container {
+    padding-top: 50px;
+  }
+  .me .me__container .me__photo {
+    flex-basis: 40%;
+  }
+  .me .me__container .me__photo img {
+    width: 100%;
+    border-radius: 45% 30%;
+  }
+  .me .me__container .me__about {
+    flex-basis: 50%;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .me .me__container .me__links a {
+    margin: 30px auto;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .me .me__container {
+    min-height: 83vh;
+    padding-top: 70px;
+  }
+  .me .me__container .me__photo {
+    flex-basis: 30%;
+  }
+  .me .me__container .me__about {
+    flex-basis: 50%;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .me .me__container .me__links a {
+    margin: 40px auto;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .me .me__container {
+    min-height: 88vh;
+    padding-top: 50px;
+  }
+  .me .me__container .me__photo {
+    flex-basis: 35%;
+  }
+  .me .me__container .me__about {
+    flex-basis: 45%;
+    font-size: 46px;
+    line-height: 58px;
+  }
+  .me .me__container .me__links a {
+    margin: 40px auto;
+  }
 }
 
 .commercial {
@@ -207,6 +296,11 @@ div[class$=__next] {
 div[class$=__next] span.arrow {
   display: inline-block;
   animation: arrow 1.5s ease-in-out infinite;
+}
+@media only screen and (min-width: 1600px) {
+  div[class$=__next] {
+    font-size: 40px;
+  }
 }
 
 div[class$=__body] ul {
