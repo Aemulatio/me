@@ -81,6 +81,7 @@ header.header .header__title .header__firstName {
 }
 .me .me__container {
   width: 90vw;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -110,6 +111,135 @@ header.header .header__title .header__firstName {
   margin: 40px auto;
   font-size: 50px;
 }
+
+.commercial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+}
+.commercial .commercial__container {
+  color: #c6c6c6;
+  width: 90vw;
+  min-height: 85vh;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+.commercial .commercial__container .commercial__title {
+  flex-basis: 100%;
+  text-align: center;
+}
+.commercial .commercial__container .commercial__title h3 {
+  font-size: 35px;
+}
+.commercial .commercial__container .commercial__body {
+  flex-basis: 100%;
+}
+
+.diy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.diy .diy__container {
+  color: #c6c6c6;
+  width: 90vw;
+  min-height: 85vh;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.diy .diy__container .diy__title {
+  flex-basis: 100%;
+  text-align: center;
+}
+.diy .diy__container .diy__title h3 {
+  font-size: 35px;
+}
+.diy .diy__container .diy__body {
+  flex-basis: 100%;
+  padding-top: 50px;
+}
+
+div[class$=__next] {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 25px;
+}
+@keyframes arrow {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+div[class$=__next] span.arrow {
+  display: inline-block;
+  animation: arrow 1.5s ease-in-out infinite;
+}
+@media only screen and (min-width: 2000px) {
+  div[class$=__next] {
+    font-size: 40px;
+  }
+}
+
+div[class$=__body] ul {
+  list-style: none;
+}
+div[class$=__body] ul li {
+  font-size: 24px;
+  text-align: left;
+  padding-left: 5px;
+  cursor: pointer;
+}
+div[class$=__body] ul li::before {
+  content: ">>";
+  display: inline-block;
+  transition: rotate 1s ease-in-out;
+}
+div[class$=__body] ul li.active::before {
+  display: inline-block;
+  content: ">>";
+  rotate: 90deg;
+  transition: rotate 1s ease-in-out;
+}
+div[class$=__body] ul li > span {
+  border-bottom: 1px solid #ffffff;
+}
+div[class$=__body] ul li:not(:first-child) {
+  margin-top: 20px;
+}
+div[class$=__body] ul li .diy__item-body, div[class$=__body] ul li .commercial__item-body {
+  cursor: default;
+}
+div[class$=__body] ul li .diy__item-body a, div[class$=__body] ul li .commercial__item-body a {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ff9000;
+}
+div[class$=__body] ul li .diy__item-body.hide, div[class$=__body] ul li .commercial__item-body.hide {
+  display: none;
+}
+div[class$=__body] ul li .diy__item-body p, div[class$=__body] ul li .commercial__item-body p {
+  margin: 10px 0;
+  line-height: 32px;
+}
+div[class$=__body] ul li .diy__item-body p span, div[class$=__body] ul li .commercial__item-body p span {
+  border-bottom: 1px dashed #ffffff;
+}
+
 @media only screen and (max-width: 600px) {
   .me .me__container {
     padding-top: 50px;
@@ -125,6 +255,74 @@ header.header .header__title .header__firstName {
     flex-basis: 100%;
     font-size: 18px;
     line-height: 24px;
+  }
+  .commercial .commercial__container {
+    padding-bottom: 20px;
+  }
+  .commercial .commercial__container .commercial__title h3 {
+    font-size: 25px;
+  }
+  .commercial .commercial__container .commercial__body ul {
+    padding: 0;
+  }
+  .commercial .commercial__container .commercial__body ul li {
+    padding: 0;
+    font-size: 20px;
+  }
+  .commercial .commercial__container .commercial__body ul li::before {
+    display: none;
+  }
+  .commercial .commercial__container .commercial__body ul li:not(:first-child) {
+    margin-top: 30px;
+  }
+  .commercial .commercial__container .commercial__body ul li .commercial__item-body a {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ff9000;
+  }
+  .commercial .commercial__container .commercial__body ul li .commercial__item-body.hide {
+    display: block;
+  }
+  .commercial .commercial__container .commercial__body ul li .commercial__item-body p {
+    margin: 10px 0;
+    line-height: 26px;
+    font-size: 18px;
+  }
+  .commercial .commercial__container .commercial__body ul li .commercial__item-body p span {
+    border-bottom: 1px dashed #ffffff;
+  }
+  .diy .diy__container {
+    padding-bottom: 20px;
+  }
+  .diy .diy__container .diy__title h3 {
+    font-size: 25px;
+  }
+  .diy .diy__container .diy__body ul {
+    padding: 0;
+  }
+  .diy .diy__container .diy__body ul li {
+    padding: 0;
+    font-size: 20px;
+  }
+  .diy .diy__container .diy__body ul li::before {
+    display: none;
+  }
+  .diy .diy__container .diy__body ul li:not(:first-child) {
+    margin-top: 30px;
+  }
+  .diy .diy__container .diy__body ul li .diy__item-body a {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #ff9000;
+  }
+  .diy .diy__container .diy__body ul li .diy__item-body.hide {
+    display: block;
+  }
+  .diy .diy__container .diy__body ul li .diy__item-body p {
+    margin: 10px 0;
+    line-height: 26px;
+    font-size: 18px;
+  }
+  .diy .diy__container .diy__body ul li .diy__item-body p span {
+    border-bottom: 1px dashed #ffffff;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -217,134 +415,6 @@ header.header .header__title .header__firstName {
   .me .me__container .me__links a {
     margin: 40px auto;
   }
-}
-
-.commercial {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #000000;
-}
-.commercial .commercial__container {
-  color: #c6c6c6;
-  width: 90vw;
-  min-height: 85vh;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-.commercial .commercial__container .commercial__title {
-  flex-basis: 100%;
-  text-align: center;
-}
-.commercial .commercial__container .commercial__title h3 {
-  font-size: 35px;
-}
-.commercial .commercial__container .commercial__body {
-  flex-basis: 100%;
-}
-
-.diy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.diy .diy__container {
-  color: #c6c6c6;
-  width: 90vw;
-  min-height: 85vh;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
-.diy .diy__container .diy__title {
-  flex-basis: 100%;
-  text-align: center;
-}
-.diy .diy__container .diy__title h3 {
-  font-size: 35px;
-}
-.diy .diy__container .diy__body {
-  flex-basis: 100%;
-  padding-top: 50px;
-}
-
-div[class$=__next] {
-  flex-basis: 100%;
-  text-align: center;
-  font-size: 25px;
-}
-@keyframes arrow {
-  0% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-div[class$=__next] span.arrow {
-  display: inline-block;
-  animation: arrow 1.5s ease-in-out infinite;
-}
-@media only screen and (min-width: 1600px) {
-  div[class$=__next] {
-    font-size: 40px;
-  }
-}
-
-div[class$=__body] ul {
-  list-style: none;
-}
-div[class$=__body] ul li {
-  font-size: 24px;
-  text-align: left;
-  padding-left: 5px;
-  cursor: pointer;
-}
-div[class$=__body] ul li::before {
-  content: ">>";
-  display: inline-block;
-  transition: rotate 1s ease-in-out;
-}
-div[class$=__body] ul li.active::before {
-  display: inline-block;
-  content: ">>";
-  rotate: 90deg;
-  transition: rotate 1s ease-in-out;
-}
-div[class$=__body] ul li > span {
-  border-bottom: 1px solid #ffffff;
-}
-div[class$=__body] ul li:not(:first-child) {
-  margin-top: 20px;
-}
-div[class$=__body] ul li .diy__item-body, div[class$=__body] ul li .commercial__item-body {
-  cursor: default;
-}
-div[class$=__body] ul li .diy__item-body a, div[class$=__body] ul li .commercial__item-body a {
-  padding-bottom: 2px;
-  border-bottom: 2px solid #ff9000;
-}
-div[class$=__body] ul li .diy__item-body.hide, div[class$=__body] ul li .commercial__item-body.hide {
-  display: none;
-}
-div[class$=__body] ul li .diy__item-body p, div[class$=__body] ul li .commercial__item-body p {
-  margin: 10px 0;
-  line-height: 32px;
-}
-div[class$=__body] ul li .diy__item-body p span, div[class$=__body] ul li .commercial__item-body p span {
-  border-bottom: 1px dashed #ffffff;
 }
 
 /*# sourceMappingURL=index.css.map */
